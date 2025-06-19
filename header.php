@@ -8,7 +8,7 @@
 <!-- <title>BizTech - HTML 5 Template Preview</title> -->
 
 <!-- Fav Icon -->
-<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="<?php get_template_directory_uri(); ?>/images/favicon.ico" type="image/x-icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -16,21 +16,21 @@
 
 <!-- Stylesheets -->
  <?php wp_head(); ?>
-<!-- <link href="assets/css/font-awesome-all.css" rel="stylesheet">
-<link href="assets/css/flaticon.css" rel="stylesheet">
-<link href="assets/css/owl.css" rel="stylesheet">
-<link href="assets/css/bootstrap.css" rel="stylesheet">
-<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
-<link href="assets/css/animate.css" rel="stylesheet">
-<link href="assets/css/nice-select.css" rel="stylesheet">
-<link href="assets/css/jquery-ui.css" rel="stylesheet">
-<link href="assets/css/color.css" rel="stylesheet">
-<link href="assets/css/elpath.css" rel="stylesheet">
-<link href="assets/css/style.css" rel="stylesheet">
-<link href="assets/css/elements-css/page-title.css" rel="stylesheet">
-<link href="assets/css/elements-css/news.css" rel="stylesheet">
-<link href="assets/css/elements-css/blog.css" rel="stylesheet">
-<link href="assets/css/responsive.css" rel="stylesheet"> -->
+<!-- <link href="<?php get_template_directory_uri(); ?>/css/font-awesome-all.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/flaticon.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/owl.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/bootstrap.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/animate.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/nice-select.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/jquery-ui.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/color.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/elpath.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/style.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/elements-css/page-title.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/elements-css/news.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/elements-css/blog.css" rel="stylesheet">
+<link href="<?php get_template_directory_uri(); ?>/css/responsive.css" rel="stylesheet"> -->
 
 </head>
 
@@ -107,7 +107,7 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
+                            <figure class="logo"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></a></figure>
                         </div>
                         <div class="menu-area clearfix">
                             <!--Mobile Navigation Toggler-->
@@ -249,7 +249,7 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
+                            <figure class="logo"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></a></figure>
                         </div>
                         <div class="menu-area clearfix">
                             <nav class="main-menu clearfix">
@@ -273,7 +273,7 @@
             <div class="close-btn"><i class="fas fa-times"></i></div>
             
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-2.png" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
@@ -294,3 +294,18 @@
                 </div>
             </nav>
         </div><!-- End Mobile Menu -->
+
+        <!-- page-title -->
+        <section class="page-title centred">
+            <div class="bg-layer" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/background/page-title.jpg);"></div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1>Blog Grid</h1>
+                    <ul class="bread-crumb clearfix">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Blog Grid</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- page-title end -->

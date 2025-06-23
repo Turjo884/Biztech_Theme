@@ -144,3 +144,7 @@ function biztech_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'biztech_scripts' );
+
+if ( class_exists( 'Kirki' ) ){
+	include_once('inc/biztech-kirki.php');
+}

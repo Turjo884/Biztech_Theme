@@ -9,6 +9,31 @@ new \Kirki\Panel(
 	]
 );
 
+// Top Header Logo Section
+function header_logo_kirki(){
+    new \Kirki\Section(
+	'header_logo',
+	[
+		'title'       => esc_html__( 'Header Logo', 'kirki' ),
+		'description' => esc_html__( 'My Section Description.', 'kirki' ),
+		'panel'       => 'biztech_panel_id',
+		'priority'    => 160,
+	]
+);
+new \Kirki\Field\Image(
+	[
+		'settings'    => 'header_logo',
+		'label'       => esc_html__( 'Header Logo', 'kirki' ),
+		'description' => esc_html__( 'Upload your logo here', 'kirki' ),
+		'section'     => 'header_logo',
+		'default'     => get_template_directory_uri().'/assets/images/logo.png',
+	]
+);
+
+}
+
+header_logo_kirki();
+
 // Top Header Cotact Section
 function header_info_kirki(){
     new \Kirki\Section(
@@ -50,6 +75,17 @@ new \Kirki\Field\Text(
 		'priority' => 10,
 	]
 );
+
+new \Kirki\Field\Text(
+	[
+		'settings' => 'address',
+		'label'    => esc_html__( 'Address', 'kirki' ),
+		'section'  => 'header_info',
+		'default'  => esc_html__( 'Chicago 12, Melborne City, USA', 'kirki' ),
+		'priority' => 10,
+	]
+);
+
 }
 
 header_info_kirki();
@@ -136,3 +172,30 @@ new \Kirki\Field\Text(
 
 }
 header_social_kirki();
+
+
+// Mobile Header Title
+function mobile_header_kirki(){
+new \Kirki\Section(
+	'mobile_header_info',
+	[
+		'title'       => esc_html__( 'Mobile Header Info', 'kirki' ),
+		'description' => esc_html__( 'My Section Description.', 'kirki' ),
+		'panel'       => 'biztech_panel_id',
+		'priority'    => 160,
+	]
+);
+
+new \Kirki\Field\Text(
+	[
+		'settings' => 'free_consulting',
+		'label'    => esc_html__( 'Free Consulting', 'kirki' ),
+		'section'  => 'mobile_header_info',
+		'default'  => esc_html__( '#', 'kirki' ),
+		'priority' => 10,
+	]
+);
+
+
+}
+mobile_header_kirki();

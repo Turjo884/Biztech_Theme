@@ -6,15 +6,14 @@
 
     $email_address = get_theme_mod('email_address' , esc_html__('info@example.com' , 'biztech'));
 
+    $address = get_theme_mod('address' , esc_html__('Chicago 12, Melborne City, USA' , 'biztech'));
+
     $login_button = get_theme_mod('login_button' , esc_html__('Login' , 'biztech'));
 
     $login_button_url = get_theme_mod('login_button_url' , esc_html__('URL' , 'biztech'));
 
-    $social_fb = get_theme_mod('social_fb' , esc_html__('#' , 'biztech'));
+   $free_consulting = get_theme_mod('free_consulting', '#');
 
-    $social_tw = get_theme_mod('social_tw' , esc_html__('#' , 'biztech'));
-
-    $social_in = get_theme_mod('social_in' , esc_html__('#' , 'biztech'));
 
 ?>
 <!-- main header -->
@@ -37,8 +36,9 @@
 
                         <?php if(!empty($email_address)) : ?>
                                 <li><i class="icon-3"></i><a href="mailto: <?php echo esc_attr($email_address); ?>"><?php echo esc_html($email_address ,'')?></a></li>
-                            </ul>
                         <?php endif; ?>
+                            </ul>
+                        
 
                         </div>
                         <div class="top-right">
@@ -48,18 +48,7 @@
                         <?php endif; ?>
 
                             <ul class="social-links clearfix">
-
-                            <?php if(!empty($social_fb)) : ?>
-                                <li><a target="_blank" href="<?php echo esc_url($social_fb);?>"><i class="fab fa-facebook-f"></i></a></li>
-                            <?php endif; ?>
-
-                            <?php if(!empty($social_tw)) : ?>
-                                <li><a target="_blank" href="<?php echo esc_url($social_tw);?>"><i class="fab fa-twitter"></i></a></li>
-                            <?php endif; ?>
-
-                            <?php if(!empty($social_in)) : ?>
-                                <li><a target="_blank" href="<?php echo esc_url($social_in);?>"><i class="fab fa-linkedin-in"></i></a></li>
-                            <?php endif; ?>
+                            <?php biztech_social(); ?>
                             </ul>
                         </div>
                     </div>
@@ -70,7 +59,9 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></a></figure>
+                            <figure class="logo">
+                                <?php echo biztech_logo(); ?>
+                            </figure>
                         </div>
                         <div class="menu-area clearfix">
                             <!--Mobile Navigation Toggler-->
@@ -198,11 +189,17 @@
                                 </div>
                             </nav>
                         </div>
+
+                        <?php if(!empty($free_consulting)) : ?>
                         <ul class="menu-right-content">
                             <li class="btn-box">
-                                <a href="index.html" class="theme-btn-one">Free Consulting</a>
+                                <a href="<?php echo esc_url($free_consulting); ?>" class="theme-btn-one">
+                                <?php echo esc_html__('Free Consulting', 'biztech'); ?>
+                                </a>
                             </li>
                         </ul>
+                        <?php endif; ?>
+
                     </div>
                 </div>
             </div>
@@ -212,18 +209,26 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""></a></figure>
+                            <figure class="logo">
+                                <?php echo biztech_logo(); ?>
+                            </figure>
                         </div>
                         <div class="menu-area clearfix">
                             <nav class="main-menu clearfix">
                                 <!--Keep This Empty / Menu will come through Javascript-->
                             </nav>
                         </div>
+
+                        <?php if(!empty($free_consulting)) : ?>
                         <ul class="menu-right-content">
                             <li class="btn-box">
-                                <a href="index.html">Free Consulting</a>
+                                <a href="<?php echo esc_url($free_consulting); ?>" class="theme-btn-one">
+                                <?php echo esc_html__('Free Consulting', 'biztech'); ?>
+                                </a>
                             </li>
                         </ul>
+                        <?php endif; ?>
+                        
                     </div>
                 </div>
             </div>
@@ -236,23 +241,29 @@
             <div class="close-btn"><i class="fas fa-times"></i></div>
             
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-2.png" alt="" title=""></a></div>
+                <div class="nav-logo">
+                    <?php echo biztech_logo(); ?>
+                </div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
                     <ul>
-                        <li>Chicago 12, Melborne City, USA</li>
-                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
-                        <li><a href="mailto:info@example.com">info@example.com</a></li>
+                        <?php if(!empty( $address)) : ?>
+                                <li><a href="<?php echo esc_url( $address); ?>"><?php echo esc_html($address ,'')?></a></li>
+                        <?php endif; ?>
+
+                        <?php if(!empty($phone_number)) : ?>
+                                <li><a href="tel:<?php echo esc_attr($phone_number , ''); ?>"><?php echo esc_html($phone_number ,'')?></a></li>
+                        <?php endif; ?>
+
+                        <?php if(!empty($email_address)) : ?>
+                                <li><a href="mailto: <?php echo esc_attr($email_address); ?>"><?php echo esc_html($email_address ,'')?></a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
                 <div class="social-links">
                     <ul class="clearfix">
-                        <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
+                        <?php biztech_social(); ?>
                     </ul>
                 </div>
             </nav>

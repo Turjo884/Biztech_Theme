@@ -72,7 +72,8 @@
                             </div>
                             <nav class="main-menu navbar-expand-md navbar-light">
                                 <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">
+                                    <?php biztech_menu(); ?>
+                                    <!-- <ul class="navigation clearfix">
                                         <li class="dropdown"><a href="index.html">Home</a>
                                             <ul>
                                                 <li><a href="index.html">Home Page 01</a></li>
@@ -185,7 +186,7 @@
                                             </ul>
                                         </li>  
                                         <li><a href="contact.html">Contact Us</a></li> 
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </nav>
                         </div>

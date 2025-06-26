@@ -14,6 +14,17 @@
      <?php   
     }
 
+    // Header Menu
+    function biztech_menu(){
+        wp_nav_menu(array(
+            'theme_location' => 'main-menu',
+            'container' => '',
+            'menu_class' => 'navigation clearfix',
+            'fallback_cb' => 'Biztech_Walker_Nav_Menu::fallback',
+            'walker' => new Biztech_Walker_Nav_Menu,
+        ));
+    }
+
     // Header Social Media 
     function biztech_social(){
 

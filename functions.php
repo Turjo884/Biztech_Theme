@@ -149,4 +149,5 @@ if ( class_exists( 'Kirki' ) ){
 	include_once('inc/biztech-kirki.php');
 }
 
+include_once('inc/nav-walker.php');
 include_once('inc/template-function.php');

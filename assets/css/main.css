@@ -1879,9 +1879,10 @@ div#mCSB_1_container{
   width: 100%;
 }
 
-.main-footer .logo-widget .text p{
-  color: #fff;
-  margin-bottom: 26px;
+.main-footer .logo-widget .text p {
+    color: #fff;
+    margin-bottom: 26px;
+    margin-top: 35px!important;
 }
 
 .main-footer .logo-widget .text p:last-child{

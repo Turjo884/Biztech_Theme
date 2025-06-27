@@ -57,12 +57,58 @@ function biztech_setup() {
 	 * See: https://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		 'aside', 'image', 'video', 'quote', 'gallery', 'status', 'audio', 'chat'
+		  'aside', 'image', 'video', 'quote', 'gallery', 'status', 'audio', 'chat'
 	) );
+
+	 remove_theme_support('widgets-block-editor');
 
 }
 endif; // biztech_setup
 add_action( 'after_setup_theme', 'biztech_setup' );
+
+/** Register Widget */
+function biztech_register_widgets_sidebar() {
+	register_sidebar( array(
+		'name'          => __( 'Footer 1', 'biztech' ),
+		'id'            => 'footer-1',
+		'description'   => __( 'Widgets in this area will be shown on footer-1 widget', 'biztech' ),
+		'before_widget' => '<div id="%1$s" class="logo-widget footer-widget text %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widgettitle widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer 2', 'biztech' ),
+		'id'            => 'footer-2',
+		'description'   => __( 'Widgets in this area will be shown on footer-2 widget', 'biztech' ),
+		'before_widget' => '<div id="%1$s" class="links-widget footer-widget ml_50 %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widgettitle widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer 3', 'biztech' ),
+		'id'            => 'footer-3',
+		'description'   => __( 'Widgets in this area will be shown on footer-3 widget', 'biztech' ),
+		'before_widget' => '<div id="%1$s" class="links-widget footer-widget ml_30 %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widgettitle widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer 4', 'biztech' ),
+		'id'            => 'footer-4',
+		'description'   => __( 'Widgets in this area will be shown on footer-4 widget', 'biztech' ),
+		'before_widget' => '<div id="%1$s" class="contact-widget footer-widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widgettitle widget-title">',
+		'after_title'   => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'biztech_register_widgets_sidebar' );
 
 // biztech css and js
 function biztech_scripts() {

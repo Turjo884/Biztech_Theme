@@ -1,3 +1,10 @@
+    <?php
+
+    $footer_copywright = get_theme_mod('footer_copywright' , esc_html__('Copyright 2025 by biztech theme All Right Reserved.' , 'biztech'));
+
+    ?>
+    
+    
     <!-- main-footer -->
     <footer class="main-footer">
         <?php if (is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') ||is_active_sidebar('footer-4')): ?>
@@ -77,12 +84,15 @@
                 </div>
                 <?php endif; ?>
             </div>
+
+            <?php if(!empty($footer_copywright)) : ?>
             <div class="footer-bottom centred">
                 <div class="auto-container">
-                    <div class="copyright">
-                        <p>Copyright 2023 by <a href="index.html">biztech</a> theme All Right Reserved.</p>
-                    </div>
+                        <div class="copyright">
+                            <p><?php echo esc_html($footer_copywright ,'')?></p>
+                        </div>
                 </div>
             </div>
+            <?php endif; ?>
     </footer>
     <!-- main-footer end -->

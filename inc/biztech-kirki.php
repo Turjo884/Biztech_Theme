@@ -199,3 +199,30 @@ new \Kirki\Field\Text(
 
 }
 mobile_header_kirki();
+
+
+// Footer
+function footer_kirki(){
+new \Kirki\Section(
+	'footer_info',
+	[
+		'title'       => esc_html__( 'Footer Info', 'kirki' ),
+		'description' => esc_html__( 'My Section Description.', 'kirki' ),
+		'panel'       => 'biztech_panel_id',
+		'priority'    => 160,
+	]
+);
+
+new \Kirki\Field\Text(
+	[
+		'settings' => 'footer_copywright',
+		'label'    => esc_html__( 'Footer Copywright', 'kirki' ),
+		'section'  => 'footer_info',
+		'default'  => esc_html__( 'Copyright 2025 by biztech theme All Right Reserved.', 'kirki' ),
+		'priority' => 10,
+	]
+);
+
+
+}
+footer_kirki();

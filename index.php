@@ -17,6 +17,17 @@
 	                        <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
                         <?php endif; ?>
 
+                        <!-- pagination -->
+                        <div class="pagination-wrapper">
+                            <?php biztech_pagination(); ?>
+                            <!-- <ul class="pagination clearfix">
+                                <li><a href="blog-2.html"><i class="icon-45"></i></a></li>
+                                <li><a href="blog-2.html" class="current">1</a></li>
+                                <li><a href="blog-2.html">2</a></li>
+                                <li><a href="blog-2.html"><i class="icon-44"></i></a></li>
+                            </ul> -->
+                        </div>
+
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">

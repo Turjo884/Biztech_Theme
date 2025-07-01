@@ -50,3 +50,26 @@
 
         <?php
     }
+
+
+   // biztech_pagination
+    function biztech_pagination(){
+        $pages = paginate_links( array( 
+            'type' => 'array',
+            'prev_text' => __('<i class="icon-45"></i>', 'biztech'),
+            'next_text' => __('<i class="icon-44"></i>', 'biztech'),
+        ) );
+
+        if( $pages ) {
+            echo '<ul class="pagination clearfix">';
+            foreach ( $pages as $page ) {
+                // Convert span.current to a class="current" <a> to match your HTML structure
+                if ( strpos($page, 'current') !== false && strpos($page, '<span') !== false ) {
+                    $page = str_replace('<span', '<a class="current"', $page);
+                    $page = str_replace('</span>', '</a>', $page);
+                }
+                echo "<li>$page</li>";
+            }
+            echo '</ul>';
+        }
+    }

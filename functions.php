@@ -69,6 +69,16 @@ add_action( 'after_setup_theme', 'biztech_setup' );
 /** Register Widget */
 function biztech_register_widgets_sidebar() {
 	register_sidebar( array(
+		'name'          => __( 'Blog Sidebar', 'biztech' ),
+		'id'            => 'blog-sidebar',
+		'description'   => __( 'Widgets in this area will be shown blog page sidebar', 'biztech' ),
+		'before_widget' => '<div id="%1$s" class="blog-sidebar ml_40 %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="widget-title"><h3>',
+		'after_title'   => '</h3></div>',
+	) );
+
+	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'biztech' ),
 		'id'            => 'footer-1',
 		'description'   => __( 'Widgets in this area will be shown on footer-1 widget', 'biztech' ),

@@ -1,11 +1,13 @@
 <?php
     get_header();
+
+    $no_sidebar = is_active_sidebar('blog-sidebar') ? '' : 'justify-content-center';
 ?>
 
         <!-- sidebar-page-container -->
         <section class="sidebar-page-container pt_150 pb_150">
             <div class="auto-container">
-                <div class="row clearfix">
+                <div class="row clearfix <?php echo esc_attr('$no_sidebar'); ?>">
                     <div class="col-lg-8 col-md-12 col-sm-12 sidebar-side">
                         <div class="blog-standard-content">
 
@@ -20,18 +22,16 @@
                         <!-- pagination -->
                         <div class="pagination-wrapper">
                             <?php biztech_pagination(); ?>
-                            <!-- <ul class="pagination clearfix">
-                                <li><a href="blog-2.html"><i class="icon-45"></i></a></li>
-                                <li><a href="blog-2.html" class="current">1</a></li>
-                                <li><a href="blog-2.html">2</a></li>
-                                <li><a href="blog-2.html"><i class="icon-44"></i></a></li>
-                            </ul> -->
                         </div>
 
                         </div>
                     </div>
+
+                    <!-- Sidebar Start -->
+                      <?php if (is_active_sidebar('blog-sidebar')) : ?>
                     <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-                        <div class="blog-sidebar ml_40">
+                        <?php get_sidebar(); ?>
+                        <!-- <div class="blog-sidebar ml_40">
                             <div class="sidebar-widget search-widget">
                                 <div class="search-form">
                                     <form action="blog-2.html" method="post">
@@ -96,8 +96,9 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
+                     <?php endif; ?>
                 </div>
             </div>
         </section>
